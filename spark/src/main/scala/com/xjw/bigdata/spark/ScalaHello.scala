@@ -1,7 +1,7 @@
 package com.xjw.bigdata.spark
 
 /**
- * 将scala目录设置为 Sources Root
+ * 注意：将scala目录设置为 Sources Root
  */
 class ScalaHello {
 
