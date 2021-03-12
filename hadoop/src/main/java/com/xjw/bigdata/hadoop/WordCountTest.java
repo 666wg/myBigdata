@@ -16,19 +16,18 @@ import java.util.List;
 public class WordCountTest {
 
     /**
-     * @Author: w
-     * @Description: 测试Mapper
+     * 测试Mapper
      */
     @Test
     public void WordCountMapperTest() throws IOException {
-        /** 构造输入值 */
+        /* 构造输入值 */
         Pair<LongWritable, Text> line1 = new Pair<LongWritable, Text>(new LongWritable(0), new Text("zhangsan lisi wangwu"));
         Pair<LongWritable, Text> line2 = new Pair<LongWritable, Text>(new LongWritable(0), new Text("zhangsan lisi"));
         List<Pair<LongWritable, Text>> inList = new ArrayList<Pair<LongWritable, Text>>();
         inList.add(line1);
         inList.add(line2);
 
-        /** 构造输出值 */
+        /* 构造输出值 */
         Pair<Text, IntWritable> outputRecord1 = new Pair<Text, IntWritable>(new Text("zhangsan"), new IntWritable(1));
         Pair<Text, IntWritable> outputRecord2 = new Pair<Text, IntWritable>(new Text("lisi"), new IntWritable(1));
         Pair<Text, IntWritable> outputRecord3 = new Pair<Text, IntWritable>(new Text("wangwu"), new IntWritable(1));
@@ -59,12 +58,11 @@ public class WordCountTest {
 
 
     /**
-     * @Author: w
-     * @Description: 测试Reducer
+     * 测试Reducer
      */
     @Test
     public void WordCountReducerTest() throws IOException {
-        /** 构造输入值 */
+        /* 构造输入值 */
         List<IntWritable> zhangsanList = new ArrayList<IntWritable>();
         zhangsanList.add(new IntWritable(1));
         zhangsanList.add(new IntWritable(1));
@@ -81,7 +79,7 @@ public class WordCountTest {
         inList.add(line2);
         inList.add(line3);
 
-        /** 构造输出值 */
+        /* 构造输出值 */
         Pair<Text, IntWritable> outputRecord1 = new Pair<Text, IntWritable>(new Text("zhangsan"), new IntWritable(2));
         Pair<Text, IntWritable> outputRecord2 = new Pair<Text, IntWritable>(new Text("lisi"), new IntWritable(2));
         Pair<Text, IntWritable> outputRecord3 = new Pair<Text, IntWritable>(new Text("wangwu"), new IntWritable(1));
@@ -105,19 +103,18 @@ public class WordCountTest {
 
 
     /**
-     * @Author: w
-     * @Description: 测试Driver
+     * 测试Driver
      */
     @Test
     public void WordCountDriverTest() throws IOException {
-        /** 构造输入值 */
+        /* 构造输入值 */
         Pair<LongWritable, Text> line1 = new Pair<LongWritable, Text>(new LongWritable(0), new Text("zhangsan lisi wangwu"));
         Pair<LongWritable, Text> line2 = new Pair<LongWritable, Text>(new LongWritable(0), new Text("zhangsan lisi"));
         List<Pair<LongWritable, Text>> inList = new ArrayList<Pair<LongWritable, Text>>();
         inList.add(line1);
         inList.add(line2);
 
-        /** 构造输出值 */
+        /* 构造输出值 */
         Pair<Text, IntWritable> outputRecord1 = new Pair<Text, IntWritable>(new Text("zhangsan"), new IntWritable(2));
         Pair<Text, IntWritable> outputRecord2 = new Pair<Text, IntWritable>(new Text("lisi"), new IntWritable(2));
         Pair<Text, IntWritable> outputRecord3 = new Pair<Text, IntWritable>(new Text("wangwu"), new IntWritable(1));
